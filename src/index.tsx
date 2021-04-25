@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import 'core-js/features/set';
+import 'core-js/features/map';
+import '@vkontakte/vkui/dist/vkui.css';
+import { App } from './app';
 import reportWebVitals from './reportWebVitals';
+import { AdaptivityProvider, ConfigProvider } from '@vkontakte/vkui';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider>
+      <AdaptivityProvider>
+        <App />
+      </AdaptivityProvider>
+    </ConfigProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
